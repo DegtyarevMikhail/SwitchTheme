@@ -31,4 +31,28 @@
         <item name="android:windowExitAnimation">@android:anim/fade_out</item>
     </style>
 
+    <style name="CalcButtonStyle">
+        <item name="android:backgroundTint">@color/calc_button_color</item>
+        <item name="android:layout_width">@dimen/calc_button_width</item>
+        <item name="android:layout_height">@dimen/calc_button_height</item>
+        <item name="android:layout_margin">@dimen/default_margin</item>
+        <item name="android:text">@string/_1</item>
+
+        <item name="rippleColor">#D54011</item>
+        <item name="cornerRadius">16dp</item>
+        <item name="strokeWidth">3dp</item>
+        <item name="strokeColor">#D54113</item>
+
+
+
+    </style>
+    <style name="CalcButtonStyle.Sign">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textSize">30sp</item>
+        <item name="rippleColor">#D54011</item>
+        <item name="cornerRadius">16dp</item>
+        <item name="strokeWidth">3dp</item>
+        <item name="strokeColor">#D54113</item>
+    </style>
+
 </resources>
