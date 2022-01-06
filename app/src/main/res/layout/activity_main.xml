@@ -1,18 +1,181 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:background="@drawable/sword"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:weightSum="7"
+    tools:ignore="ExtraText">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <EditText
+        android:id="@+id/display1"
+        android:layout_width="397dp"
+        android:layout_height="80dp"
+        android:textColor="@color/white"
+        android:textSize="@dimen/greetings_string_size" />
+
+
+    <EditText
+        android:padding="@dimen/cardview_compat_inset_shadow"
+        android:id="@+id/display2"
+        android:layout_width="397dp"
+        android:layout_height="80dp"
+        android:textColor="@color/white"
+        android:textSize="@dimen/greetings_string_size"
+        />
+
+    <TableLayout
+        android:layout_margin="@dimen/default_margin"
+        android:id="@+id/TableLayout01"
+        android:layout_width="400dp"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:gravity="center">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TableRow
+            android:id="@+id/TableRow01"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/Button01"
+                style="@style/CalcButtonStyle"
+                android:text="@string/_1"
+                android:textSize="30sp"
+                />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/Button02"
+                style="@style/CalcButtonStyle"
+                android:text="@string/_2"
+                android:textSize="30sp"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/Button03"
+                style="@style/CalcButtonStyle"
+                android:text="@string/_3"
+                android:textSize="30sp"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/ButtonPlus"
+                style="@style/CalcButtonStyle"
+                android:text="@string/plus"
+                android:textSize="30sp"/>
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/TableRow02"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/Button04"
+                style="@style/CalcButtonStyle"
+                android:text="@string/_4"
+                android:textSize="30sp"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/Button05"
+                style="@style/CalcButtonStyle"
+                android:text="@string/_5"
+                android:textSize="30sp"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/Button06"
+                style="@style/CalcButtonStyle"
+                android:text="@string/_6"
+                android:textSize="30sp"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/ButtonMinus"
+                style="@style/CalcButtonStyle"
+                android:text="@string/minus"
+                android:textSize="30sp"/>
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/TableRow03"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/Button07"
+                style="@style/CalcButtonStyle"
+                android:text="@string/_7"
+                android:textSize="30sp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/Button08"
+                style="@style/CalcButtonStyle"
+                android:text="@string/_8"
+                android:textSize="30sp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/Button09"
+                style="@style/CalcButtonStyle"
+                android:text="@string/_9"
+                android:textSize="30sp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/ButtonDivide"
+                style="@style/CalcButtonStyle"
+                android:text="@string/divide"
+                android:textSize="30sp" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/TableRow04"
+            android:layout_width="fill_parent"
+            android:layout_height="30pt"
+            android:gravity="center">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/Button10"
+                style="@style/CalcButtonStyle"
+                android:text="@string/point"
+                android:textSize="30sp"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/Button11"
+                style="@style/CalcButtonStyle"
+                android:text="@string/_0"
+                android:textSize="30sp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/Button12"
+                style="@style/CalcButtonStyle"
+                android:text="@string/button12"
+                android:textSize="30sp"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/ButtonMul"
+                style="@style/CalcButtonStyle"
+                android:text="@string/multi"
+                android:textSize="30sp"/>
+
+        </TableRow>
+        <TableRow
+            android:id="@+id/TableRow05"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/calc_button_height"
+            android:gravity="center">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/ButtonC"
+                android:layout_gravity="bottom"
+                android:textColor="#D6C213"
+                style="@style/CalcButtonStyle"
+                android:text="@string/c"
+                android:textSize="30sp" />
+
+
+
+        </TableRow>
+
+    </TableLayout>
+
+</LinearLayout>
