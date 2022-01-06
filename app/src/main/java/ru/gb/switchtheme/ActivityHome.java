@@ -1,5 +1,6 @@
 package ru.gb.switchtheme;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.CompoundButton;
@@ -27,6 +28,7 @@ public class ActivityHome extends AppCompatActivity {
         //Displaying the layout after setting the theme
         setContentView(R.layout.activity_home);
 
+
         mySwitch= findViewById(R.id.mySwitch);
         if (sharedpref.isNightMode()) {
             mySwitch.setChecked(true);
@@ -50,8 +52,9 @@ public class ActivityHome extends AppCompatActivity {
 
     //Method to restart the app
     public void restartApp () {
-        Intent restartApp = new Intent(getApplicationContext(), ActivityHome.class);
+        Intent restartApp = new Intent(getApplicationContext(), MainActivity.class);  // ActivityHome.class
         startActivity(restartApp);
         finish();
     }
+    // ActivityHome
 }
