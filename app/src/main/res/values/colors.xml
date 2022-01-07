@@ -10,5 +10,6 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
-    <color name="calc_button_color">#1788BC</color>
+    <color name="calc_button_color">#465D68</color>
+    <color name="display_text">#17BEAF</color>
 </resources>

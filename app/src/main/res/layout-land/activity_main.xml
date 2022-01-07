@@ -9,7 +9,7 @@
 
     <EditText
         android:id="@+id/display1"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/display_text"
         android:textSize="@dimen/greetings_string_size"
@@ -17,7 +17,7 @@
     <EditText
         android:padding="@dimen/cardview_compat_inset_shadow"
         android:id="@+id/display2"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/display_text"
         android:textSize="@dimen/greetings_string_size"

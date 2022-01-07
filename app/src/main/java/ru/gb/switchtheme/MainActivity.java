@@ -1,15 +1,26 @@
 package ru.gb.switchtheme;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.View;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.android.material.button.MaterialButton;
+import com.google.android.material.switchmaterial.SwitchMaterial;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends  AppCompatActivity{
+
+    private final static String KeyStorage = "KeyStorage";
+
+
+    Storage data = new Storage();
+
     private EditText display1;
     private EditText display2;
     private MaterialButton key0;
@@ -33,12 +44,50 @@ public class MainActivity extends AppCompatActivity {
     char ch=' ';
     double exp1=Math.exp(1),v=0.0,pie=Math.PI;
 
-
+    //Variables
+    SwitchMaterial mySwitch;
+    ThemeSharedPref sharedpref;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        //Checking that state true or false from SharedPref
+        sharedpref = new ThemeSharedPref(this);
+        setTheme(sharedpref.isNightMode() ? R.style.ThemeNight : R.style.ThemeDay);
+
+
+        if (savedInstanceState != null  && savedInstanceState.containsKey(KeyStorage))
+        {
+            data = savedInstanceState.getParcelable(KeyStorage);
+
+        }
+
+
+
         super.onCreate(savedInstanceState);
+        //Displaying the layout after setting the theme
         setContentView(R.layout.activity_main);
+
+
+
+        mySwitch= findViewById(R.id.mySwitch);
+        if (sharedpref.isNightMode()) {
+            mySwitch.setChecked(true);
+        }
+
+        //Checking the toggle state and saving it to the SharedPref
+        mySwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    sharedpref.setNightModeState(true);
+                    restartApp();
+                }
+                else {
+                    sharedpref.setNightModeState(false);
+                    restartApp();
+                }
+            }
+        });
 
 
         display1 = (EditText) findViewById(R.id.display1);
@@ -155,6 +204,12 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+    //Method to restart the app
+    public void restartApp () {
+        Intent restartApp = new Intent(getApplicationContext(), MainActivity.class);
+        startActivity(restartApp);
+        finish();
+    }
 
     private void cal() {
         if(ch==' ')
@@ -186,7 +241,6 @@ public class MainActivity extends AppCompatActivity {
                     return;
                 }
 
-
                 val = Math.tan(Math.toRadians(v));
             }
             a = "" + val;
@@ -194,7 +248,6 @@ public class MainActivity extends AppCompatActivity {
             si = "";
             u = "";
             return;
-
 
         }
         if (u.equals("e")) {
@@ -293,6 +346,12 @@ public class MainActivity extends AppCompatActivity {
         for(i=2.0;i<=a;i++)
             f=f*i;
         return f;
+    }
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle outState){
+        outState.putParcelable(KeyStorage, data);
+        super.onSaveInstanceState(outState);
+
     }
 
 }
