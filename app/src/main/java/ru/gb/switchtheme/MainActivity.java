@@ -3,6 +3,7 @@ package ru.gb.switchtheme;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -15,6 +16,7 @@ import android.widget.Toast;
 
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.switchmaterial.SwitchMaterial;
+import com.google.android.material.textfield.TextInputLayout;
 
 public class MainActivity extends  AppCompatActivity implements View.OnClickListener {
 
@@ -43,57 +45,33 @@ public class MainActivity extends  AppCompatActivity implements View.OnClickList
     private MaterialButton keyC;
     private MaterialButton keyUniversal;
     private MaterialButton keyTel;
+    private MaterialButton childButton;
+
 
     public String a, b, u = "",si="",con="", e = "Math error";
     char ch=' ';
-    double exp1=Math.exp(1),v=0.0,pie=Math.PI;
-
-    //Variables
-    SwitchMaterial ThemeSwitch;
+    double exp1 = Math.exp(1), v = 0.0, pie = Math.PI;
 
     ThemeSharedPref sharedpref;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         //Checking that state true or false from SharedPref
         sharedpref = new ThemeSharedPref(this);
-        setTheme(sharedpref.isNightMode() ? R.style.ThemeNight : R.style.ThemeDay);
+
+        setTheme(sharedpref.isNightMode()? R.style.ThemeNight : R.style.ThemeDay);
+
 
         if (savedInstanceState != null  && savedInstanceState.containsKey(KeyStorage))
         {
             data = savedInstanceState.getParcelable(KeyStorage);
 
         }
+
         super.onCreate(savedInstanceState);
         //Displaying the layout after setting the theme
         setContentView(R.layout.activity_main);
-
-        ThemeSwitch= findViewById(R.id.themeSwitch);
-       if (sharedpref.isNightMode()) {
-            ThemeSwitch.setChecked(true);
-           ThemeSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-                @Override
-                public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                    if(isChecked) {
-                       sharedpref.setNightModeState(true);
-                        goApp();
-                  } else {
-                        sharedpref.setNightModeState(false);
-                       goApp();
-                    }
-                }
-           });
-        }
-
-
-
-
-
-
-
-
-
-        //Checking the toggle state and saving it to the SharedPref
 
         display1 = (EditText) findViewById(R.id.display1);
         display2 = (EditText) findViewById(R.id.display2);
@@ -113,8 +91,8 @@ public class MainActivity extends  AppCompatActivity implements View.OnClickList
         keyMultiply = findViewById(R.id.key_multy);
         keyEquals = findViewById(R.id.key_equals);
         keyC = findViewById(R.id.key_C);
-
         keyUniversal = findViewById(R.id.key_Universal);
+
         keyUniversal.setOnClickListener(this);
         keyTel = findViewById(R.id.key_tel);
         keyTel.setOnClickListener(new View.OnClickListener() {
@@ -126,6 +104,19 @@ public class MainActivity extends  AppCompatActivity implements View.OnClickList
                 startActivity(intent);
             }
         });
+
+        childButton = findViewById(R.id.childButton);
+
+        childButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this,ActivityHome.class);
+                startActivity(intent);
+
+            }
+        });
+
+
 
 
         key0.setOnClickListener(view -> {
@@ -220,14 +211,6 @@ public class MainActivity extends  AppCompatActivity implements View.OnClickList
             }
         });
 
-
-
-    }
-    //Method to restart the app
-    public void goApp () {
-        Intent goApp = new Intent(getApplicationContext(), ActivityHome.class);
-        startActivity(goApp);
-        finish();
     }
 
     private void cal() {
@@ -366,13 +349,12 @@ public class MainActivity extends  AppCompatActivity implements View.OnClickList
             f=f*i;
         return f;
     }
+
     @Override
     protected void onSaveInstanceState(@NonNull Bundle outState){
         outState.putParcelable(KeyStorage, data);
         super.onSaveInstanceState(outState);
-
     }
-
     @Override
     public void onClick(View view) {
         display1.setText("https://www.google.com");
@@ -382,4 +364,5 @@ public class MainActivity extends  AppCompatActivity implements View.OnClickList
             startActivity(intent);
         }
     }
+
 }

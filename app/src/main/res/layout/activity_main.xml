@@ -14,6 +14,7 @@
         android:textColor="@color/display_text"
         android:textSize="@dimen/greetings_string_size"
         />
+
     <EditText
         android:padding="@dimen/cardview_compat_inset_shadow"
         android:id="@+id/display2"
@@ -59,15 +60,14 @@
                 android:layout_height="wrap_content"
                 style="@style/ThemeDay"
                 android:text="@string/c"
-                android:textSize="30sp" />
+                android:textSize="10sp" />
 
-            <com.google.android.material.switchmaterial.SwitchMaterial
-                android:id="@+id/themeSwitch"
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/childButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 style="@style/ThemeDay"
-                android:text="sw"
-                android:textSize="10sp"/>
+                android:text="push"/>
 
 
 
