@@ -6,11 +6,11 @@
         <item name="colorPrimaryDark">#1976D2</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="backgroundcolor">#303030</item>
-        <item name="android:backgroundTint">#340D7A</item>
+        <item name="android:backgroundTint">#684F93</item>
         <item name="cardbackground">#ffffff</item>
         <item name="textcolor">#808080</item>
         <item name="tintcolor">#000000</item>
-        <item name="buttoncolor">#340D7A</item>
+        <item name="buttoncolor">#79158A</item>
         <item name="android:windowAnimationStyle">@style/WindowAnimationTransition</item>
 
 
@@ -33,7 +33,7 @@
         <item name="cardbackground">#424242</item>
         <item name="textcolor">#ffffff</item>
         <item name="tintcolor">#ffffff</item>
-        <item name="buttoncolor">#2196F3</item>
+        <item name="buttoncolor">#7C098F</item>
         <item name="android:windowAnimationStyle">@style/WindowAnimationTransition</item>
 
         <item name="android:backgroundTint">#000000</item>

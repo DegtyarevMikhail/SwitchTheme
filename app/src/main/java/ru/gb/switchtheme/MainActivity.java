@@ -4,17 +4,19 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.Switch;
 import android.widget.Toast;
 
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.switchmaterial.SwitchMaterial;
 
-public class MainActivity extends  AppCompatActivity{
+public class MainActivity extends  AppCompatActivity implements View.OnClickListener {
 
     private final static String KeyStorage = "KeyStorage";
 
@@ -39,13 +41,16 @@ public class MainActivity extends  AppCompatActivity{
     private MaterialButton keyMultiply;
     private MaterialButton keyEquals;
     private MaterialButton keyC;
+    private MaterialButton keyUniversal;
+    private MaterialButton keyTel;
 
     public String a, b, u = "",si="",con="", e = "Math error";
     char ch=' ';
     double exp1=Math.exp(1),v=0.0,pie=Math.PI;
 
     //Variables
-    SwitchMaterial mySwitch;
+    SwitchMaterial ThemeSwitch;
+
     ThemeSharedPref sharedpref;
 
     @Override
@@ -54,41 +59,41 @@ public class MainActivity extends  AppCompatActivity{
         sharedpref = new ThemeSharedPref(this);
         setTheme(sharedpref.isNightMode() ? R.style.ThemeNight : R.style.ThemeDay);
 
-
         if (savedInstanceState != null  && savedInstanceState.containsKey(KeyStorage))
         {
             data = savedInstanceState.getParcelable(KeyStorage);
 
         }
-
-
-
         super.onCreate(savedInstanceState);
         //Displaying the layout after setting the theme
         setContentView(R.layout.activity_main);
 
-
-
-        mySwitch= findViewById(R.id.mySwitch);
-        if (sharedpref.isNightMode()) {
-            mySwitch.setChecked(true);
+        ThemeSwitch= findViewById(R.id.themeSwitch);
+       if (sharedpref.isNightMode()) {
+            ThemeSwitch.setChecked(true);
+           ThemeSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                @Override
+                public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                    if(isChecked) {
+                       sharedpref.setNightModeState(true);
+                        goApp();
+                  } else {
+                        sharedpref.setNightModeState(false);
+                       goApp();
+                    }
+                }
+           });
         }
 
-        //Checking the toggle state and saving it to the SharedPref
-        mySwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
-                    sharedpref.setNightModeState(true);
-                    restartApp();
-                }
-                else {
-                    sharedpref.setNightModeState(false);
-                    restartApp();
-                }
-            }
-        });
 
+
+
+
+
+
+
+
+        //Checking the toggle state and saving it to the SharedPref
 
         display1 = (EditText) findViewById(R.id.display1);
         display2 = (EditText) findViewById(R.id.display2);
@@ -108,6 +113,20 @@ public class MainActivity extends  AppCompatActivity{
         keyMultiply = findViewById(R.id.key_multy);
         keyEquals = findViewById(R.id.key_equals);
         keyC = findViewById(R.id.key_C);
+
+        keyUniversal = findViewById(R.id.key_Universal);
+        keyUniversal.setOnClickListener(this);
+        keyTel = findViewById(R.id.key_tel);
+        keyTel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                display1.setText("tel:8");
+                String uri = display1.getText().toString();
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
+                startActivity(intent);
+            }
+        });
+
 
         key0.setOnClickListener(view -> {
             u = u + "0";
@@ -205,9 +224,9 @@ public class MainActivity extends  AppCompatActivity{
 
     }
     //Method to restart the app
-    public void restartApp () {
-        Intent restartApp = new Intent(getApplicationContext(), MainActivity.class);
-        startActivity(restartApp);
+    public void goApp () {
+        Intent goApp = new Intent(getApplicationContext(), ActivityHome.class);
+        startActivity(goApp);
         finish();
     }
 
@@ -354,4 +373,13 @@ public class MainActivity extends  AppCompatActivity{
 
     }
 
+    @Override
+    public void onClick(View view) {
+        display1.setText("https://www.google.com");
+        String uri = display1.getText().toString();
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            startActivity(intent);
+        }
+    }
 }

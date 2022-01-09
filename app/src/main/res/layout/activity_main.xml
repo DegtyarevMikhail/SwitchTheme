@@ -31,6 +31,49 @@
         android:gravity="center">
 
         <TableRow
+            android:id="@+id/TableRow05"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/key_Universal"
+                android:textColor="#12EA1B"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/ThemeDay"
+                android:text="google"
+                android:textSize="15sp" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/key_tel"
+                android:textColor="#D6C213"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/ThemeDay"
+                android:text="Telefon"
+                android:textSize="10sp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/key_C"
+                android:textColor="#D6C213"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/ThemeDay"
+                android:text="@string/c"
+                android:textSize="30sp" />
+
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/themeSwitch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/ThemeDay"
+                android:text="sw"
+                android:textSize="10sp"/>
+
+
+
+        </TableRow>
+
+        <TableRow
             android:id="@+id/TableRow01"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
@@ -154,28 +197,7 @@
                 android:textSize="30sp"/>
 
         </TableRow>
-        <TableRow
-            android:id="@+id/TableRow05"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center">
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/key_C"
-                android:textColor="#D6C213"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                style="@style/ThemeDay"
-                android:text="@string/c"
-                android:textSize="30sp" />
-            <com.google.android.material.switchmaterial.SwitchMaterial
-                android:id="@+id/mySwitch"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
-
-
-        </TableRow>
 
     </TableLayout>
 
