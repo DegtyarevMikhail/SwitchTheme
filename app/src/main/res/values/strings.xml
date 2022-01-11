@@ -16,6 +16,6 @@
     <string name="_0">0</string>
     <string name="button12">=</string>
     <string name="multi">*</string>
-    <string name="c">C</string>
+    <string name="c">delete</string>
     <string name="swipe_to_change_theme">Swipe to change theme</string>
 </resources>

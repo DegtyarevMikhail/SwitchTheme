@@ -18,7 +18,7 @@ import com.google.android.material.button.MaterialButton;
 import com.google.android.material.switchmaterial.SwitchMaterial;
 import com.google.android.material.textfield.TextInputLayout;
 
-public class MainActivity extends  AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends  AppCompatActivity implements View.OnClickListener {  // comment for pull request
 
     private final static String KeyStorage = "KeyStorage";
 

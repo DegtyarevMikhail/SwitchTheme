@@ -3,7 +3,7 @@ package ru.gb.switchtheme;
 import android.content.Context;
 import android.content.SharedPreferences;
 
-public class ThemeSharedPref {
+public class ThemeSharedPref {  // comment for pull request
 
     SharedPreferences mySharedPref ;
     ThemeSharedPref(Context context) {

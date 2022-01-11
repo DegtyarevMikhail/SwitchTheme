@@ -2,195 +2,178 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:gravity="top">
 
     <EditText
         android:id="@+id/display1"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/display_text"
-        android:textSize="@dimen/greetings_string_size" />
+        android:textSize="25sp" />
 
     <EditText
         android:id="@+id/display2"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="@dimen/cardview_compat_inset_shadow"
         android:textColor="@color/display_text"
-        android:textSize="@dimen/greetings_string_size" />
+        android:textSize="25sp" />
 
-    <TableLayout
-        android:id="@+id/TableLayout01"
-        android:layout_width="match_parent"
+
+    <LinearLayout
+        android:id="@+id/TableRow05"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/default_margin"
-        android:gravity="center">
+        android:orientation="horizontal">
 
-        <TableRow
-            android:id="@+id/TableRow05"
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/key_Universal"
+            style="@style/ThemeDay"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center">
+            android:text="google"
+            android:textColor="#12EA1B"
+            android:textSize="10sp" />
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/key_Universal"
-                style="@style/ThemeDay"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="google"
-                android:textColor="#12EA1B"
-                android:textSize="15sp" />
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/key_tel"
-                style="@style/ThemeDay"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Telefon"
-                android:textColor="#D6C213"
-                android:textSize="10sp" />
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/key_C"
-                style="@style/ThemeDay"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/c"
-                android:textColor="#D6C213"
-                android:textSize="10sp" />
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/childButton"
-                style="@style/ThemeDay"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="pushMe" />
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/key_dec"
-                style="@style/ThemeDay"
-                android:text="@string/point"
-                android:textSize="15sp" />
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/key_equals"
-                style="@style/ThemeDay"
-                android:text="@string/button12"
-                android:textSize="15sp" />
-
-
-        </TableRow>
-
-        <TableRow
-            android:id="@+id/TableRow01"
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/key_tel"
+            style="@style/ThemeDay"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center">
+            android:text="Telefon"
+            android:textColor="#D6C213"
+            android:textSize="10sp" />
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/key_1"
-                style="@style/ThemeDay"
-                android:text="@string/_1"
-                android:textSize="30sp" />
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/key_2"
-                style="@style/ThemeDay"
-                android:text="@string/_2"
-                android:textSize="30sp" />
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/key_3"
-                style="@style/ThemeDay"
-                android:text="@string/_3"
-                android:textSize="30sp" />
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/key_4"
-                style="@style/ThemeDay"
-                android:text="@string/_4"
-                android:textSize="30sp" />
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/key_5"
-                style="@style/ThemeDay"
-                android:text="@string/_5"
-                android:textSize="30sp" />
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/key_plus"
-                style="@style/ThemeDay"
-                android:text="@string/plus"
-                android:textSize="30sp" />
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/key_multy"
-                style="@style/ThemeDay"
-                android:text="@string/multi"
-                android:textSize="30sp" />
-        </TableRow>
-
-        <TableRow
-            android:id="@+id/TableRow02"
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/key_C"
+            style="@style/ThemeDay"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center">
+            android:text="@string/c"
+            android:textColor="#D6C213"
+            android:textSize="10sp" />
 
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/key_6"
-                style="@style/ThemeDay"
-                android:text="@string/_6"
-                android:textSize="30sp" />
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/key_7"
-                style="@style/ThemeDay"
-                android:text="@string/_7"
-                android:textSize="30sp" />
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/key_8"
-                style="@style/ThemeDay"
-                android:text="@string/_8"
-                android:textSize="30sp" />
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/key_9"
-                style="@style/ThemeDay"
-                android:text="@string/_9"
-                android:textSize="30sp" />
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/key_zero"
-                style="@style/ThemeDay"
-                android:text="@string/_0"
-                android:textSize="30sp" />
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/key_minus"
-                style="@style/ThemeDay"
-                android:text="@string/minus"
-                android:textSize="30sp" />
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/key_divide"
-                style="@style/ThemeDay"
-                android:text="@string/divide"
-                android:textSize="30sp" />
-        </TableRow>
-
-        <TableRow
-            android:id="@+id/TableRow03"
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/childButton"
+            style="@style/ThemeDay"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center">
+            android:text="pushMe" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/key_dec"
+            style="@style/ThemeDay"
+            android:text="@string/point"
+            android:textSize="10sp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/key_equals"
+            style="@style/ThemeDay"
+            android:text="@string/button12"
+            android:textSize="10sp" />
 
 
+    </LinearLayout>
 
+    <LinearLayout
+        android:id="@+id/TableRow01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/key_1"
+            style="@style/ThemeDay"
+            android:text="@string/_1"
+            android:textSize="12sp" />
 
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/key_2"
+            style="@style/ThemeDay"
+            android:text="@string/_2"
+            android:textSize="12sp" />
 
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/key_3"
+            style="@style/ThemeDay"
+            android:text="@string/_3"
+            android:textSize="12sp" />
 
-        </TableRow>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/key_4"
+            style="@style/ThemeDay"
+            android:text="@string/_4"
+            android:textSize="12sp" />
 
-    </TableLayout>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/key_5"
+            style="@style/ThemeDay"
+            android:text="@string/_5"
+            android:textSize="12sp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/key_plus"
+            style="@style/ThemeDay"
+            android:text="@string/plus"
+            android:textSize="12sp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/key_multy"
+            style="@style/ThemeDay"
+            android:text="@string/multi"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/TableRow02"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="1dp">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/key_6"
+            style="@style/ThemeDay"
+            android:text="@string/_6"
+            android:textSize="12sp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/key_7"
+            style="@style/ThemeDay"
+            android:text="@string/_7"
+            android:textSize="15sp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/key_8"
+            style="@style/ThemeDay"
+            android:text="@string/_8"
+            android:textSize="12sp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/key_9"
+            style="@style/ThemeDay"
+            android:text="@string/_9"
+            android:textSize="15sp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/key_zero"
+            style="@style/ThemeDay"
+            android:text="@string/_0"
+            android:textSize="12sp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/key_minus"
+            style="@style/ThemeDay"
+            android:text="@string/minus"
+            android:textSize="12sp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/key_divide"
+            style="@style/ThemeDay"
+            android:text="@string/divide"
+            android:textSize="12sp" />
+    </LinearLayout>
+
 
 </LinearLayout>

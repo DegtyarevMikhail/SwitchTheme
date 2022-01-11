@@ -5,7 +5,7 @@ import android.os.Parcelable;
 
 import java.sql.SQLInput;
 
-public class Storage implements Parcelable {
+public class Storage implements Parcelable {   // comment for pull request
     private String display1 = "";
     private String display2 = "";
     public Storage() {
