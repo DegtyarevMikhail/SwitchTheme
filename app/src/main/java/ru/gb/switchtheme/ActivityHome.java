@@ -12,7 +12,7 @@ import android.widget.EditText;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.switchmaterial.SwitchMaterial;
 
-public class ActivityHome<intent> extends AppCompatActivity {
+public class ActivityHome<intent> extends AppCompatActivity {  // comment for pull request
 
     private static String cTheme;
 
